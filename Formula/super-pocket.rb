@@ -4,7 +4,7 @@ class SuperPocket < Formula
   desc "Developer toolkit: README generator, codebase-to-markdown, XML tags, agent templates & cheatsheets"
   homepage "https://github.com/dim-gggl/super-pocket"
   url "https://files.pythonhosted.org/packages/source/s/super-pocket/super_pocket-1.0.tar.gz"
-  sha256 "aea68dd5d5ef7c219102d87196bcb0dbeff0c7948f89ec2fb708deb724b907df"
+  sha256 "e6f33f7d48e34796b9f2558564dfa8d0bdc55070ff71fc194361485fb7ff2704"
   license "MIT"
 
   depends_on "python@3.12"
@@ -16,12 +16,12 @@ class SuperPocket < Formula
 
   resource "httpx" do
     url "https://files.pythonhosted.org/packages/78/82/08f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f928f0c3cbdeb0ec8dd4184bcf44e04d58a0e12d32"
+    sha256 "053d1e31a228e127b4a55e7c0cdd523d293fd22147713e60b308999fa3bcab5e"
   end
 
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abffbd4e5f/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    sha256 "7827998208324c9a1afe321bf611f0ce301ba22aad6d0f8f60071091673a5b66"
   end
 
   resource "markupsafe" do
@@ -36,12 +36,12 @@ class SuperPocket < Formula
 
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/bc/57/e84d88dfe0aec03b7a2d4327012c1627b6e0bfe1de2a595e6e977ed9f0c5/python-dotenv-1.2.1.tar.gz"
-    sha256 "1e1a5c7d7e3e4d7d03c0b3c3e3d0b0d3c2b0d0e0f0d0c0b0a09080706050403"
+    sha256 "c9e7d0d328126b2a54de4019858a90d73e5139055bd98c5da935c919dac78ec4"
   end
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    sha256 "3199828416cb956682bfc7152ce3140d5c47ff68f68f4d90a4e14710834a366e"
   end
 
   resource "requests" do
@@ -51,12 +51,12 @@ class SuperPocket < Formula
 
   resource "rich" do
     url "https://files.pythonhosted.org/packages/a7/6a/d08d167e5df2e20b4f6d2b1c631cf0e2a7bbb0c08a5fdb5f21d72fb7f0e7/rich-14.0.0.tar.gz"
-    sha256 "6b1e48ef2f8b5b6b7d7d0f3d9f3b0d0c0e0f0d0c0b0a09080706050403020100"
+    sha256 "30c31f581746110bb4cb3e0f0750eb89b4d619d282d648c7bb12e02bfa998ab0"
   end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/0f/bd/1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776a/certifi-2024.8.30.tar.gz"
-    sha256 "bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"
+    sha256 "74b6e7d1876ede66cd1d9309b08ce6eedbfff7b8b9570a89fc13ee7440f47f29"
   end
 
   resource "charset-normalizer" do
@@ -66,17 +66,17 @@ class SuperPocket < Formula
 
   resource "idna" do
     url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.8.tar.gz"
-    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
+    sha256 "601097e3af551dca39fa89152f8d5cb64a10457b9bfbb0a577d9b29527073297"
   end
 
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    sha256 "49227dcfc0af5bcdb11d596c096203b56113f7df75377c9a14d1f345ad8d047a"
   end
 
   resource "httpcore" do
     url "https://files.pythonhosted.org/packages/17/b0/5e8b8674f8d203335a62fdfcfa0d11ebe09b1af0dff7b45d7c4f3e43dc4f/httpcore-1.0.5.tar.gz"
-    sha256 "34a38e2f9291467ee3b44e89dd52615370e152954ba21721378a87b2960f7a61"
+    sha256 "a6f870da688f4bf05e742cfd5d821107fb3b0016a396944e98e0387ebfe1b8a1"
   end
 
   resource "sniffio" do
@@ -86,7 +86,7 @@ class SuperPocket < Formula
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/e6/e3/c4c8d473d6780f1e5f373f3ee2a6fac6d28dac12b8db2f8d06a358b5d0d2/anyio-4.4.0.tar.gz"
-    sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"
+    sha256 "15031c68e1bbc1e2af1f3d55e75fc7d59ae5127c08caf7f7db297ac53798936d"
   end
 
   resource "h11" do
