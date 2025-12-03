@@ -15,13 +15,13 @@ class SuperPocket < Formula
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/78/82/08f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6/httpx-0.28.1.tar.gz"
-    sha256 "053d1e31a228e127b4a55e7c0cdd523d293fd22147713e60b308999fa3bcab5e"
+    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abffbd4e5f/jinja2-3.1.4.tar.gz"
-    sha256 "7827998208324c9a1afe321bf611f0ce301ba22aad6d0f8f60071091673a5b66"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "markupsafe" do
@@ -35,13 +35,13 @@ class SuperPocket < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/bc/57/e84d88dfe0aec03b7a2d4327012c1627b6e0bfe1de2a595e6e977ed9f0c5/python-dotenv-1.2.1.tar.gz"
-    sha256 "c9e7d0d328126b2a54de4019858a90d73e5139055bd98c5da935c919dac78ec4"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.2.tar.gz"
-    sha256 "3199828416cb956682bfc7152ce3140d5c47ff68f68f4d90a4e14710834a366e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
@@ -50,13 +50,13 @@ class SuperPocket < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a7/6a/d08d167e5df2e20b4f6d2b1c631cf0e2a7bbb0c08a5fdb5f21d72fb7f0e7/rich-14.0.0.tar.gz"
-    sha256 "30c31f581746110bb4cb3e0f0750eb89b4d619d282d648c7bb12e02bfa998ab0"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/0f/bd/1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776a/certifi-2024.8.30.tar.gz"
-    sha256 "74b6e7d1876ede66cd1d9309b08ce6eedbfff7b8b9570a89fc13ee7440f47f29"
+    url "https://files.pythonhosted.org/packages/a2/8c/58f469717fa48465e4a50c014a0400602d3c437d7c0c468e17ada824da3a/certifi-2025.11.12.tar.gz"
+    sha256 "d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316"
   end
 
   resource "charset-normalizer" do
@@ -65,18 +65,18 @@ class SuperPocket < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.8.tar.gz"
-    sha256 "601097e3af551dca39fa89152f8d5cb64a10457b9bfbb0a577d9b29527073297"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/43/6d/fa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6/urllib3-2.2.3.tar.gz"
-    sha256 "49227dcfc0af5bcdb11d596c096203b56113f7df75377c9a14d1f345ad8d047a"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/17/b0/5e8b8674f8d203335a62fdfcfa0d11ebe09b1af0dff7b45d7c4f3e43dc4f/httpcore-1.0.5.tar.gz"
-    sha256 "a6f870da688f4bf05e742cfd5d821107fb3b0016a396944e98e0387ebfe1b8a1"
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "sniffio" do
@@ -85,8 +85,8 @@ class SuperPocket < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/e6/e3/c4c8d473d6780f1e5f373f3ee2a6fac6d28dac12b8db2f8d06a358b5d0d2/anyio-4.4.0.tar.gz"
-    sha256 "15031c68e1bbc1e2af1f3d55e75fc7d59ae5127c08caf7f7db297ac53798936d"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "9d548fab979eaf9d53fe1dbf9d0d741ae9e11dbbaa3b283fa95546c12d534b7d"
   end
 
   resource "h11" do
