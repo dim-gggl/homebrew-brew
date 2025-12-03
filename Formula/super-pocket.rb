@@ -346,3 +346,4 @@ class SuperPocket < Formula
     # Création du lien symbolique pour la commande 'pocket'
     bin.install_symlink libexec/bin/pocket
   end
+end
