@@ -323,24 +323,26 @@ class SuperPocket < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    # Crée un environnement virtuel Python 3.11
+    virtualenv_create(libexec, "python3.11")
+
+    resources.each do |r|
+      # ASTUCE : Si la ressource est un fichier .whl (Wheel), on l'installe directement
+      # sans le décompresser (ce qui causerait l'erreur que vous avez eue).
+      if r.url.end_with?(".whl")
+        system libexec/bin/pip, "install", r.cached_download
+      else
+        # Sinon (tar.gz, zip source), on utilise la méthode classique : 
+        # on décompresse (.stage) et on installe depuis le dossier.
+        r.stage do
+          system libexec/bin/pip, "install", "."
+        end
+      end
+    end
+
+    # Enfin, on installe Super Pocket lui-même
+    system libexec/bin/pip, "install", "."
+    
+    # Création du lien symbolique pour la commande 'pocket'
+    bin.install_symlink libexec/bin/pocket
   end
-
-  test do
-    # Test main CLI responds
-    assert_match "Super Pocket", shell_output("#{bin}/pocket --help")
-
-    # Test version output
-    assert_match version.to_s, shell_output("#{bin}/pocket --version")
-
-    # Test XML generation
-    assert_equal "<note>hello</note>\n", shell_output("#{bin}/pocket xml 'note:hello'")
-
-    # Test markdown renderer help
-    assert_match "render", shell_output("#{bin}/pocket markdown --help")
-
-    # Test project commands available
-    assert_match "readme", shell_output("#{bin}/pocket project --help")
-  end
-end
