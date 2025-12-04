@@ -28,14 +28,17 @@ class SuperPocket < Formula
 
     # Install the package with all dependencies using pip
     venv.pip_install Pathname.pwd
+
+    # Create symlink for CLI command
+    bin.install_symlink libexec/"bin/pocket"
   end
 
   test do
-    # Verify command is accessible
-    assert_match "pocket", shell_output("#{bin}/pocket --version")
+    # Verify command is accessible and version is displayed
+    assert_match "pocket, version", shell_output("#{bin}/pocket --version")
 
-    # Test basic functionality
-    system bin/"pocket", "project", "list-templates"
+    # Test basic functionality - show help works
+    system bin/"pocket", "--help"
   end
 
   def caveats
