@@ -108,4 +108,3 @@ class SuperPocket < Formula
     EOS
   end
 end
-end
