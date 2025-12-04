@@ -4,13 +4,13 @@ class SuperPocket < Formula
   desc "Developer toolkit: README generator, codebase-to-markdown, XML tags, agent templates & cheatsheets"
   homepage "https://github.com/dim-gggl/super-pocket"
   url "https://github.com/dim-gggl/super-pocket/archive/refs/tags/v1.0.tar.gz"
-  sha256 "aea68dd5d5ef7c219102d87196bcb0dbeff0c7948f89ec2fb708deb724b907df"
+  sha256 "REGENERATE_THIS_HASH"  # Run: curl -L <url> | shasum -a 256
   license "MIT"
 
-# 1. Forcer Python 3.11 pour la stabilité
-  depends_on "python@3.11" 
+  # Python 3.11 required for binary wheel compatibility
+  depends_on "python@3.11"
 
-  # 2. AJOUT CRITIQUE : Librairies requises pour compiler Pillow
+  # System libraries required for Pillow image processing
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
@@ -18,8 +18,8 @@ class SuperPocket < Formula
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "zlib"
-  
-  # Outil de build souvent nécessaire pour lier les librairies C
+
+  # Build tool for linking C libraries
   depends_on "pkg-config" => :build
 
   resource "alabaster" do
@@ -42,10 +42,7 @@ class SuperPocket < Formula
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
-  resource "asyncio" do
-    url "https://files.pythonhosted.org/packages/71/ea/26c489a11f7ca862d5705db67683a7361ce11c23a7b98fc6c2deaeccede2/asyncio-4.0.0.tar.gz"
-    sha256 "570cd9e50db83bc1629152d4d0b7558d6451bb1bfd5dfc2e935d96fc2f40329b"
-  end
+  # NOTE: 'asyncio' removed - it's built into Python 3.3+ and this package is obsolete
 
   resource "babel" do
     url "https://files.pythonhosted.org/packages/7d/6b/d52e42361e1aa00709585ecc30b3f9684b3ab62530771402248b1b1d6240/babel-2.17.0.tar.gz"
@@ -167,10 +164,7 @@ class SuperPocket < Formula
     sha256 "0f8cb9555000a4b5b617f66bfd2566264c4984b27589d3b845685983e8ea85ac"
   end
 
-  resource "pydantic_core" do
-    url "https://files.pythonhosted.org/packages/cp311/p/pydantic_core/pydantic_core-2.41.5-cp311-cp311-macosx_11_0_arm64.whl"
-    sha256 "7f3bf998340c6d4b0c9a2f02d6a400e51f123b59565d74dc60d252ce888c260b"
-  end
+  # NOTE: pydantic_core removed - will be installed automatically by pip with correct architecture
 
   resource "Pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
@@ -312,10 +306,7 @@ class SuperPocket < Formula
     sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
   end
 
-  resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cp311/w/watchfiles/watchfiles-0.24.0-cp311-cp311-macosx_11_0_arm64.whl"
-    sha256 "2dadf8a8014fde6addfd3c379e6ed1a981c8f0a48292d662e27cabfe4239c83c"
-  end
+  # NOTE: watchfiles removed - will be installed automatically by pip with correct architecture
 
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
@@ -323,31 +314,55 @@ class SuperPocket < Formula
   end
 
   def install
-    # 1. On prépare l'environnement virtuel Python 3.11
+    # Create Python 3.11 virtual environment
     virtualenv_create(libexec, "python3.11")
-    
-    # Raccourci vers le pip de cet environnement
+
     pip = libexec/"bin/pip"
 
+    # Platform-specific binary packages that pip should handle automatically
+    auto_install_packages = ["pydantic_core", "watchfiles"]
+
+    # Install all resources except platform-specific ones
     resources.each do |r|
-      # Gestion intelligente : si c'est un Wheel (.whl), on l'installe directement
+      next if auto_install_packages.include?(r.name)
+
       if r.url.end_with?(".whl")
-        system pip, "install", r.cached_download
+        system pip, "install", "--no-deps", r.cached_download
       else
-        # Sinon (tar.gz), on décompresse et on installe
         r.stage do
-          system pip, "install", "."
+          system pip, "install", "--no-deps", "."
         end
       end
     end
 
-    # 2. Installation de Super Pocket (LE FIX EST ICI)
-    # --no-deps            : Ne cherche pas à installer les dépendances (on vient de le faire manuellement)
-    # --no-build-isolation : N'essaie pas de télécharger des outils de build (interdit par Homebrew), utilise ceux présents
-    # --ignore-installed   : Écrase si nécessaire sans se plaindre
-    system pip, "install", "--no-deps", "--no-build-isolation", "--ignore-installed", "."
+    # Let pip install platform-specific packages with correct architecture
+    system pip, "install", "--no-cache-dir", "pydantic-core==2.41.5", "watchfiles==0.24.0"
 
-    # 3. Création du lien symbolique pour la commande finale
+    # Install super-pocket itself
+    # --no-deps: Dependencies already installed manually
+    # --no-build-isolation: Use system build tools (required by Homebrew)
+    system pip, "install", "--no-deps", "--no-build-isolation", "."
+
+    # Create symlink for CLI command
     bin.install_symlink libexec/"bin/pocket"
+  end
+
+  test do
+    # Verify command is accessible
+    assert_match "pocket", shell_output("#{bin}/pocket --version")
+
+    # Test basic functionality
+    system bin/"pocket", "project", "list-templates"
+  end
+
+  def caveats
+    <<~EOS
+      Super Pocket has been installed successfully!
+
+      Run 'pocket --help' to get started.
+
+      Note: This formula uses Python 3.11 exclusively due to binary wheel
+      compatibility requirements for pydantic-core and watchfiles.
+    EOS
   end
 end
