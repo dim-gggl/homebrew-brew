@@ -195,6 +195,11 @@ class SuperPocket < Formula
     sha256 "0f8cb9555000a4b5b617f66bfd2566264c4984b27589d3b845685983e8ea85ac"
   end
 
+  resource "pydantic-core" do
+    url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
+    sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+  end
+
   resource "Pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -308,6 +313,11 @@ class SuperPocket < Formula
   resource "typing-inspection" do
     url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
     sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+  end
+
+  resource "watchfiles" do
+    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
+    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
   end
 
   resource "websockets" do
