@@ -4,8 +4,8 @@ class SuperPocket < Formula
 
   desc "Developer toolkit: README generator, codebase-to-markdown, XML tags, agent templates & cheatsheets"
   homepage "https://github.com/dim-gggl/super-pocket"
-  url "https://github.com/dim-gggl/super-pocket/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "8a9d774a0dcce7e27b98672a30b2ec3c4b4c2b9d1ae90c43be52aa2c6a040217"
+  url "https://github.com/dim-gggl/super-pocket/archive/refs/tags/v1.0.31.tar.gz"
+  sha256 "2b6911724c8e5215a16805ad315b640caaa1c6d54bf5a08d85fcaa6bdd16a84c"
   license "MIT"
 
   option "with-docs", "Include documentation build dependencies (Sphinx stack)"
