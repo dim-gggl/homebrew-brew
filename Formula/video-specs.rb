@@ -21,7 +21,7 @@ class VideoSpecs < Formula
 
   resource "rich-click" do
     url "https://files.pythonhosted.org/packages/source/r/rich-click/rich_click-1.9.4.tar.gz"
-    sha256 "SHA256_FOR_RICH_CLICK"
+    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
   end
 
   def install
