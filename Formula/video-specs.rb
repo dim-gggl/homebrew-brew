@@ -16,7 +16,7 @@ class VideoSpecs < Formula
 
   resource "rich" do
     url "https://files.pythonhosted.org/packages/source/r/rich/rich-14.2.0.tar.gz"
-    sha256 "SHA256_FOR_RICH"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rich-click" do
