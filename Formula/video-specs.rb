@@ -3,8 +3,8 @@ class VideoSpecs < Formula
 
   desc "Lightweight CLI helper to organize video ideas into JSON/XML/HTML prompts"
   homepage "https://github.com/dim-gggl/video-specs"
-  url "https://files.pythonhosted.org/packages/13/34/1fbf2fd5862ef2628d44f1965a54a3f00ed2051ef55b4afb9b2b7f908845/video_specs-0.1.4.tar.gz"
-  sha256 "5f21210fe0d60cb86f4f83d1fc21427187bebb3da09e29fb4975849059586703"
+  url "https://files.pythonhosted.org/packages/4b/94/4400984ac3cd0f2b9696ea589a4a6f667cd2493b279c13a77940ea2d32f2/video_specs-0.1.5.tar.gz"
+  sha256 "d8c7306f5e82994c6aae1d9d431e471e74e4df9a94a87fdee5093e37a68bdcc1"
   license "MIT"
 
   depends_on "python@3.12"
